@@ -1,24 +1,19 @@
 import React from 'react';
-import faker from 'faker';
-import formatRelative from 'date-fns/formatRelative';
 
-const CommentDetail = () => {
-   const now = new Date();
+const CommentDetail = (props) => {
    return (
-      <div className="comment">
+      <div className="ui comment">
          <a href="/" className="avatar">
-            <img src={faker.image.avatar()} alt="avatar" />
+            <img src={props.avatar} alt="avatar" />
          </a>
          <div className="content">
             <a href="/" className="author">
-               {faker.name.firstName()}
+               {props.author}
             </a>
             <div className="metadata">
-               <span className="date">
-                  {formatRelative(faker.date.recent(), now)}
-               </span>
+               <span className="date">{props.timeAgo}</span>
             </div>
-            <div className="text">{faker.lorem.sentence(undefined, 12)}</div>
+            <div className="text">{props.text}</div>
          </div>
       </div>
    );
