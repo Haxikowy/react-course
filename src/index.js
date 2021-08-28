@@ -1,47 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CommentDetail from './CommentDetail';
-import ApprovalCard from './ApprovalCard';
-import faker from 'faker';
+import DisplaySeason from './DisplaySeason';
+import Loader from './Loader';
 
-const App = () => {
-   return (
-      <div className="ui container comments">
-         <ApprovalCard>
-            <div>
-               <h4>Warning!</h4>
-               Are you sure you want to do this?
-            </div>
-         </ApprovalCard>
+class App extends React.Component {
+   state = {
+      lat: null,
+      errorMessage: null,
+   };
+   componentDidMount() {
+      window.navigator.geolocation.getCurrentPosition(
+         position => this.setState({ lat: position.coords.latitude }),
+         err => this.setState({ errorMessage: err.message })
+      );
+   }
 
-         <ApprovalCard>
-            <CommentDetail
-               avatar={faker.image.avatar()}
-               author="Sam"
-               timeAgo="Today at 4:45PM"
-               text={faker.lorem.sentence(undefined, 12)}
-            />
-         </ApprovalCard>
+   renderContent() {
+      if (this.state.lat && !this.state.errorMessage) {
+         return <DisplaySeason lat={this.state.lat} />;
+      } else if (!this.state.lat && this.state.errorMessage) {
+         return <div>{this.state.errorMessage}</div>;
+      } else {
+         return <Loader message="Please accept location request" />;
+      }
+   }
 
-         <ApprovalCard>
-            <CommentDetail
-               avatar={faker.image.avatar()}
-               author="Alex"
-               timeAgo="Today at 2:00AM"
-               text={faker.lorem.sentence(undefined, 12)}
-            />
-         </ApprovalCard>
+   render() {
+      return <div>{this.renderContent()}</div>;
+   }
+}
 
-         <ApprovalCard>
-            <CommentDetail
-               avatar={faker.image.avatar()}
-               author="Tristana"
-               timeAgo="Yesterday at 5:00PM"
-               text={faker.lorem.sentence(undefined, 12)}
-            />
-         </ApprovalCard>
-      </div>
-   );
-};
-
-ReactDOM.render(<App />, document.querySelector('#root'));
+ReactDOM.render(<App />, document.getElementById('root'));
