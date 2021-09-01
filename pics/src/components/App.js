@@ -17,7 +17,7 @@ class App extends React.Component {
 
    render() {
       return (
-         <div className="ui container">
+         <div style={{ padding: '2em 0.5em' }} className="ui container">
             <SearchBar onSubmit={this.onSearchSubmit} />
             <ImageList images={this.state.images} />
          </div>
