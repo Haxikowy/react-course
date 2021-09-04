@@ -6,6 +6,6 @@ export default axios.create({
       part: 'snippet',
       type: 'video',
       maxResults: 5,
-      key: 'AIzaSyC4E7lKLxn2PKUuzaHFhzcgCzFaf0UkGsA',
+      key: 'GENERATE-NEW-KEY', //You have to generate your own api key to get it working
    },
 });
