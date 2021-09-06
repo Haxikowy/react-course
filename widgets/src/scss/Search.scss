@@ -1,0 +1,20 @@
+$primary-color: steelblue;
+$secondary-color: orange;
+$font-weights: (
+   'regular': 400,
+   'medium': 500,
+   'bold': 700,
+   'vbold': 900,
+);
+
+.search {
+   .searchmatch {
+      color: $primary-color !important;
+      font-weight: map-get($font-weights, vbold);
+
+      transition: color 0.15s ease-in-out;
+      &:hover {
+         color: $secondary-color !important;
+      }
+   }
+}
