@@ -27,7 +27,7 @@ const Search = () => {
                   format: 'json',
                   list: 'search',
                   origin: '*',
-                  srlimit: '5',
+                  srlimit: '10',
                   srsearch: debouncedTerm,
                },
             }
