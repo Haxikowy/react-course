@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: hsl(0, 10%, 20%);
+  font-family: 'Roboto', sans-serif;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: min(80%, 1000px);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 2em 0;
+    color: hsl(0, 0, 90%);
+
+    .song-list {
+      list-style-type: none;
+      width: 60%;
+
+      &--item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 0;
+        border-bottom: 1px solid hsla(0, 0%, 95%, 0.2);
+        &:last-child {
+          border-bottom: none;
+        }
+        &__btn {
+          padding: 0.5em 1.5em;
+          border-radius: 5px;
+          border: none;
+          background-color: hsl(210, 100%, 20%);
+
+          color: white;
+          font-weight: 900;
+          text-transform: uppercase;
+
+          cursor: pointer;
+          transition: opacity 0.2s ease-in-out;
+
+          &:hover,
+          &:active {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+    .song-details {
+      width: 30%;
+    }
+  }
+}
