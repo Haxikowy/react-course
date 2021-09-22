@@ -1,0 +1,19 @@
+{
+  "streams": [
+    {
+      "title": "My stream",
+      "description": "Coding 💻",
+      "id": 1
+    },
+    {
+      "title": "My stream",
+      "description": "Coding 💻",
+      "id": 2
+    },
+    {
+      "title": "LEAGUE OF LEGENDS",
+      "description": "Playing LOL 🎮",
+      "id": 3
+    }
+  ]
+}

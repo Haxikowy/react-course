@@ -36,7 +36,7 @@ class GoogleAuth extends Component {
           className="header--list__link header--list__avatar">
           <img
             alt="current user avatar"
-            // src={this.auth.currentUser.get().getBasicProfile().wJ}
+            src={this.auth.currentUser.get().getBasicProfile().getImageUrl()}
           />
         </div>
       );
