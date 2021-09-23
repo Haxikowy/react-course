@@ -1,0 +1,82 @@
+.stream-create__form{
+  .field{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5em;
+
+    &__label{
+      margin-bottom: .5em;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    &__input{
+      width: 100%;
+      padding: .5em;
+      border-radius: 8px;
+      outline: none;
+      border: 1px solid hsl(0, 0%, 90%);
+      font-size: 1.2rem;        
+    }
+    &__button{
+      position: relative;
+      overflow: hidden;
+      padding: .75em 1.5em;
+      border: none;
+      border-radius: 8px;
+      background-color:transparent;
+      color: white;
+      font-size: 1rem;
+
+      // bg animation -> performence 👍
+      &::before{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        inset: 0 -300% -300% 0;
+        pointer-events: none;        
+        background: linear-gradient(90deg, hsl(265, 100%, 10%), hsl(265, 100%, 40%));
+        animation: btn-bg linear 10s alternate infinite;
+      }
+    }
+
+
+    // focus outline styles
+    .input__style{
+      position: absolute;
+      inset: -10px -5px;
+      border: 1px dashed hsla(265, 100%, 40%, .2);
+      border-radius: 8px;
+      pointer-events: none;
+      opacity: 0;
+
+      transition: opacity 150ms linear;
+    }
+
+    .error--input{
+      border: 1px solid hsl(0, 100%, 60%);
+      background-color: hsl(0, 100%, 98.5%);
+    }
+
+    .error--text{
+      margin-top: .25em;
+      font-size: .75rem;
+      color: hsl(0, 100%, 60%);
+    }
+
+    &__input:focus +    .input__style{
+      opacity: 1;
+    } 
+  }
+}
+
+
+// pulse animation
+@keyframes btn-bg {
+  0%{
+    transform: translate(0%);
+  }
+  100% {
+    transform: translate(-70%, -70%)
+  }
+}
