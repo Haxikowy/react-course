@@ -3,17 +3,24 @@
     {
       "title": "My stream",
       "description": "Coding 💻",
-      "id": 1
-    },
-    {
-      "title": "My stream",
-      "description": "Coding 💻",
       "id": 2
     },
     {
       "title": "LEAGUE OF LEGENDS",
       "description": "Playing LOL 🎮",
       "id": 3
+    },
+    {
+      "title": "Creating React & Redux app",
+      "description": "Learning how to build app using React & Redux 📚💻",
+      "userId": "101088248367375318594",
+      "id": 4
+    },
+    {
+      "title": "Just another Torchlight stream",
+      "description": "Playing Torchlight as Berserker 🎮",
+      "userId": "116387150866562750651",
+      "id": 5
     }
   ]
 }
