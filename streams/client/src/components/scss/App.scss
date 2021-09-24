@@ -1,14 +1,24 @@
 @use 'resets';
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap');
 
+:root{
+  font-family: 'Roboto', sans-serif;
+}
+
 .container {
   width: min(80%, 1000px);
   margin: 0 auto;
-  font-family: 'Roboto', sans-serif;
-  button{
-  font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-  }
 }
 
+a{
+  display:inline-block;
+  text-decoration: none;
+}
+
+button{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+}
