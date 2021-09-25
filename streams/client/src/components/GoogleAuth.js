@@ -33,6 +33,8 @@ class GoogleAuth extends Component {
       return (
         <div
           onClick={this.auth.signOut}
+          onKeyPress={e => e.key === 'Enter' && this.auth.signOut()}
+          tabIndex="0"
           className="header--list__link header--list__avatar">
           <img
             alt="current user avatar"
@@ -42,7 +44,11 @@ class GoogleAuth extends Component {
       );
     } else {
       return (
-        <div onClick={this.auth.signIn} className="header--list__link">
+        <div
+          tabIndex="0"
+          onClick={this.auth.signIn}
+          onKeyPress={e => e.key === 'Enter' && this.auth.signIn()}
+          className="header--list__link">
           Sign In
         </div>
       );
