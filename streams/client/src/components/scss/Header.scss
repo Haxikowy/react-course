@@ -7,8 +7,10 @@
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 100;
 
   width: 100%;
+  padding: 0 1em;
   font-size: 1.125rem;
 
   background-color: hsl(265, 100%, 40%);
@@ -18,7 +20,7 @@
 
   &__logo {
     display: inline-block;
-    padding: 1em;
+    padding: 1em 0;
 
     color: white;
     font-family: 'Press Start 2P', cursive;
@@ -31,56 +33,56 @@
     display: flex;
     height: 100%;
     margin: 0;
-    padding: 0 1em 0 0;
 
     list-style-type: none;
     font-size: 1rem;
 
     &__item {
       position: relative;
-      height: 100%;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 10%;
-
-        width: 80%;
-        height: 3px;
-
-        background-color: hsl(310, 100%, 75%);
-        border-radius: 50px;
-        opacity: 0;
-        transform: translate(0, -70px) rotate(90deg) scale(0);
-
-        transition: opacity 400ms linear, transform 500ms ease-in-out;
-      }
-
-      &:hover {
-        &::after {
-          opacity: 1;
-          transform: translate(0, 0) rotate(0) scale(1);
-        }
-      }
-
+      height: 100%;      
+      
       & + & {
         margin-left: 1em;
       }
+
+      .header--list__link {
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        outline: none;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 10%;
+          
+          width: 80%;
+          height: 3px;
+          
+          background-color: hsl(310, 100%, 75%);
+          border-radius: 50px;
+          opacity: 0;
+          transform: scale(0);
+          
+          transition: opacity 300ms ease, transform 300ms cubic-bezier(0.27,-0.13, 0.71, 1.26);
+        }
+        
+        &:hover, &:focus {
+          &::after {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      }
     }
-
-    &__link {
-      display: flex;
-      align-items: center;
-      height: 100%;
-
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    &__avatar {
+      &__avatar {
       max-width: 40px;
 
       img {
