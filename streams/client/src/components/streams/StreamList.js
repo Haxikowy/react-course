@@ -37,7 +37,9 @@ class StreamList extends Component {
           <div className="col">
             <span className="stream-list__icon">🎥</span>
             <div className="stream-list__content">
-              <h3 className="stream-list__title">{stream.title}</h3>
+              <Link to={`/streams/${stream.id}`} className="stream-list__title">
+                {stream.title}
+              </Link>
               <p className="stream-list__description">{stream.description}</p>
             </div>
           </div>
