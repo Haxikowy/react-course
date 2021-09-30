@@ -1,0 +1,28 @@
+@use 'resets';
+
+body{
+  --spacing: 2.5em;
+  --text-clr: hsl(150, 10%, 95%);
+  --background: hsl(150, 70%, 3%);
+  --elements-clr: hsl(150, 70%, 35%);
+  --border-radius: 5px;
+  background-color: var(--background);
+  color: var(--text-clr);
+  font-family: sans-serif;
+}
+
+.container{
+  width: min(80%, 1000px);
+  min-height: 100vh;
+  margin: 0 auto;
+
+  &>*{
+    margin-top: var(--spacing);
+  }
+}
+
+.UserCreate{
+  .Button{
+    margin-top: 1em;
+  }
+}

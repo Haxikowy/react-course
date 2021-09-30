@@ -1,0 +1,23 @@
+.Field{
+label{
+  display:block;
+  font-weight: 600;
+}
+input{
+  margin-top: .5em;
+  padding: .5em 2em;
+  outline: 0;
+  border: 1px transparent solid;
+  border-radius: var(--border-radius);
+
+  background-color: var(--elements-clr);
+  color: var(--text-clr);
+  font-size: 1rem;
+
+  transition: border-color 150ms linear;
+
+  &:focus{
+    border-color: #0F0;
+  }
+}
+}
